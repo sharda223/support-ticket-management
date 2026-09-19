@@ -1,0 +1,16 @@
+---
+description: Frontend follows approved React/Vite specs
+globs: frontend/**
+alwaysApply: false
+---
+
+# Frontend implementation rules
+
+Follow `spec/frontend.md` and `spec/api.md`.
+
+- React + Vite only; no authentication UI
+- Call backend REST APIs; do not invent endpoints
+- Show meaningful API errors, loading, and empty states
+- Status UI offers only valid next transitions; backend remains source of truth
+- `VITE_API_BASE_URL` via env; never commit secrets
+- Do not modify backend unless a genuine API blocker is found

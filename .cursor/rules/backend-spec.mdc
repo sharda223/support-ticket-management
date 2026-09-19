@@ -1,0 +1,16 @@
+---
+description: Enforce approved Support Ticket specs during backend work
+globs: backend/**
+alwaysApply: false
+---
+
+# Backend implementation rules
+
+Follow `spec/requirements.md`, `spec/api.md`, `spec/state-machine.md`, `spec/data-model.md`, `spec/testing.md`, and `rules/implementation.md`.
+
+- Java 21 + Spring Boot + JPA + PostgreSQL (runtime)
+- Enforce ticket state machine in the service layer; invalid transitions → 409, no DB change
+- No authentication
+- No secrets in source; datasource via env vars
+- Do not implement frontend under this glob
+- Tests must cover valid/invalid transitions and persistence
